@@ -9,15 +9,15 @@ class AppEvaluatedButtonThemes {
   // Light mode Evaluated Button Theme
   static final darkEvaluatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100.r)),
       foregroundColor: Colors.white,
       backgroundColor: AppColorScheme.primary,
-      textStyle: GoogleFonts.urbanist(
-        textStyle: TextStyle(fontSize: 15.sp),
+      textStyle: GoogleFonts.poppins(
+        textStyle: TextStyle(fontSize: 16.sp),
         color: Colors.white,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w500,
       ),
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 15.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
     ),
   );
 }
