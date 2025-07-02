@@ -25,19 +25,21 @@ class Customlisttile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyle = Theme.of(context).textTheme;
-    return ListTile(
-      title: Text(
-        title,
-        style: textStyle.bodyLarge!.copyWith(
-          fontWeight: FontWeight.w500,
-          fontSize: textSize ?? 16.sp,
-          color: textColor ?? AppColorScheme.onPrimary,
+    return GestureDetector(
+      onTap: onTap,
+      child: ListTile(
+        title: Text(
+          title,
+          style: textStyle.bodyLarge!.copyWith(
+            fontWeight: FontWeight.w500,
+            fontSize: textSize ?? 16.sp,
+            color: textColor ?? AppColorScheme.onPrimary,
+          ),
         ),
-      ),
-      leading: SvgPicture.asset(leadingIcon),
-      trailing: isLeadingOff == true? null: GestureDetector(
-        onTap: onTap,
+        leading: SvgPicture.asset(leadingIcon),
+        trailing: isLeadingOff == true? null: GestureDetector(
         child: SvgPicture.asset(AppIcons.forwardIcon),
+        ),
       ),
     );
   }

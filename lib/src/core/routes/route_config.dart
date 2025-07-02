@@ -2,7 +2,7 @@ part of 'route_import_part.dart';
 
 class RouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: RouteName.profileScreen, /// Start at the splash screen
+    initialLocation: RouteName.splashScreen, /// Start at the splash screen
     routes: [
       GoRoute(
         path: RouteName.splashScreen,
