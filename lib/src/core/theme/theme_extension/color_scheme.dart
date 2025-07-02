@@ -8,7 +8,7 @@ class AppColorScheme {
   static const Color onSecondary = Colors.white;
   static const Color onError = Color(0xFFD7CCC8);
   static const Color error = Color(0xFFF75555);
-  static const Color surface = Color(0xFFF7F8F9);
+  static const Color surface = Color(0xFF1A1A1A);
   static const Color onSurface = Color(0xFFA5A5AB);
   static const Color primaryTextColor = Colors.white;
   static const Color secondaryTextColor = Color(0xffE0E0E0);
