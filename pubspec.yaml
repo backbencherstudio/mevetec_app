@@ -70,12 +70,9 @@ flutter:
   assets:
     - assets/profile_icons/
     - assets/images/
-<<<<<<< HEAD
     - assets/
     - assets/icons/
 
-=======
->>>>>>> fb7bea593e1698794fbb94720083c5916fd1f5ec
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
