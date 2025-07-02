@@ -12,10 +12,8 @@ class ProfileDisplay extends StatelessWidget {
 
     return Row(
       children: [
-         Image.asset(AppImages.profilImage,
-              height: 80.h,width: 80.w),
-              SizedBox(width: 20.h,),
-             
+        Image.asset(AppImages.profilImage, height: 80.h, width: 80.w),
+        SizedBox(width: 20.h),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

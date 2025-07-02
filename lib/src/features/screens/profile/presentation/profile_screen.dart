@@ -17,49 +17,53 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      body: Padding(
-        padding: AppPadding.horizontalPadding,
-        child: Column(
-          children: [
-            CommonWidget.appBar(title: "Account",),
-            SizedBox(height: 24.w),
-            ProfileDisplay(),
-            SizedBox(height: 32.h),
-            Divider(color: AppColorScheme.onSurface, thickness: 0.5),
-            SizedBox(
-              child: Expanded(
-                child: Consumer(
-                  builder: (context, ref, _) {
-                    final tileInfo = ref.watch(listProvider);
-                    return ListView.builder(
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      itemCount: tileInfo.length,
-                      itemBuilder: (context, index) {
-                        return Customlisttile(
-                          title: tileInfo[index].name,
-                          leadingIcon: tileInfo[index].imgIcon,
-                          onTap: () {
-                            context.push(tileInfo[index].routName);
+      body: Column(
+        children: [
+         CommonWidget.appBar(title: "Account",),
+          Padding(
+            padding: AppPadding.horizontalPadding,
+            child: Column(
+              children: [
+                SizedBox(height: 24.w),
+                ProfileDisplay(),
+                SizedBox(height: 32.h),
+                Divider(color: AppColorScheme.onSurface, thickness: 0.5),
+                SizedBox(
+                  child: Expanded(
+                    child: Consumer(
+                      builder: (context, ref, _) {
+                        final tileInfo = ref.watch(listProvider);
+                        return ListView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: tileInfo.length,
+                          itemBuilder: (context, index) {
+                            return Customlisttile(
+                              title: tileInfo[index].name,
+                              leadingIcon: tileInfo[index].imgIcon,
+                              onTap: () {
+                                context.push(tileInfo[index].routName);
+                              },
+                            );
                           },
                         );
                       },
-                    );
-                  },
+                    ),
+                  ),
                 ),
-              ),
+                SizedBox(height: 32.h),
+                Customlisttile(
+                  title: "Logout",
+                  onTap: () {},
+                  textColor: AppColorScheme.error,
+                  textSize: 18.sp,
+                  leadingIcon: AppIcons.logoutIcon,
+                  isLeadingOff: true,
+                ),
+              ],
             ),
-            SizedBox(height: 32.h),
-            Customlisttile(
-              title: "Logout",
-              onTap: () {},
-              textColor: AppColorScheme.error,
-              textSize: 18.sp,
-              leadingIcon: AppIcons.logoutIcon,
-              isLeadingOff: true,
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

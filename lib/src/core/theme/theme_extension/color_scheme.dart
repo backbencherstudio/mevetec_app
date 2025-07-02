@@ -15,7 +15,7 @@ class AppColorScheme {
   static const Color labelTextColor = Color(0xffBDBDBD);
   static const Color borderColor = Color(0xffE9E9EA);
   static const Color shadowColor = Color.fromRGBO(0, 0, 0, 0.10);
-
+  static const Color dividerColor = Color(0xff35383F);
   static ColorScheme colorScheme = ColorScheme.light(
     primary: primary,
     secondary: secondary,
