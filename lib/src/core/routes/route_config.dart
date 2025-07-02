@@ -27,6 +27,18 @@ class RouteConfig {
           );
         },
       ),
+
+         GoRoute(
+        path: RouteName.profileInfoScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: ProfileInfoScreen(),
+          );
+        },
+      ),
     ],
   );
 }

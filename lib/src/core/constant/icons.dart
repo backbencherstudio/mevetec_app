@@ -8,4 +8,6 @@ class AppIcons {
   static const String privacyIcon = "$profilePath/lock.svg";
   static const String logoutIcon = "$profilePath/logout.svg";
   static const String forwardIcon = "$profilePath/forwardArrow.svg";
+
+  static const String editIcon = "$profilePath/editImg.svg";
 }

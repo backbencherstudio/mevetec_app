@@ -14,6 +14,7 @@ static PreferredSizeWidget appBar({required String title, required BuildContext 
 
  return AppBar(
         backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         centerTitle: false,
         title: Text(
           title,
