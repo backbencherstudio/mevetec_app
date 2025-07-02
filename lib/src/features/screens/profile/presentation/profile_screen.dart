@@ -1,0 +1,65 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mevetec_app/src/core/constant/icons.dart';
+import 'package:mevetec_app/src/core/constant/padding.dart';
+import 'package:mevetec_app/src/core/theme/theme_extension/color_scheme.dart';
+import 'package:mevetec_app/src/features/common_widegts/commonWidget.dart';
+import 'package:mevetec_app/src/features/screens/profile/Riverpod/listProvider.dart';
+import 'package:mevetec_app/src/features/screens/profile/presentation/widgets/customListTile.dart';
+import 'package:mevetec_app/src/features/screens/profile/presentation/widgets/profile_display.dart';
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: CommonWidget.appBar(title: "Account", context: context),
+      body: Padding(
+        padding: AppPadding.horizontalPadding,
+        child: Column(
+          children: [
+            SizedBox(height: 24.w),
+            ProfileDisplay(),
+            SizedBox(height: 32.h),
+            Divider(color: AppColorScheme.onSurface, thickness: 0.5),
+            SizedBox(
+              child: Expanded(
+                child: Consumer(
+                  builder: (context, ref, _) {
+                    final tileInfo = ref.watch(listProvider);
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: tileInfo.length,
+                      itemBuilder: (context, index) {
+                        return Customlisttile(
+                          title: tileInfo[index].name,
+                          leadingIcon: tileInfo[index].imgIcon,
+                          onTap: () {
+                            context.push(tileInfo[index].routName);
+                          },
+                        );
+                      },
+                    );
+                  },
+                ),
+              ),
+            ),
+            SizedBox(height: 32.h),
+            Customlisttile(
+              title: "Logout",
+              onTap: () {},
+              textColor: AppColorScheme.error,
+              textSize: 18.sp,
+              leadingIcon: AppIcons.logoutIcon,
+              isLeadingOff: true,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
