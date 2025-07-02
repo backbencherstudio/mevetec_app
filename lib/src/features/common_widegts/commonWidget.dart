@@ -5,34 +5,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mevetec_app/src/core/theme/theme_extension/color_scheme.dart';
 
 import '../../core/constant/icons.dart';
+import 'custom_app_bar/custom_app_bar.dart';
 
 class CommonWidget {
 
 
-static PreferredSizeWidget appBar({required String title, required BuildContext context} ){
-      final textStyle = Theme.of(context).textTheme;
+static Widget appBar({String? title})=> CustomAppBar(title: title,);
 
- return AppBar(
-        backgroundColor: Colors.transparent,
-        centerTitle: false,
-        title: Text(
-          title,
-          style: textStyle.headlineSmall!.copyWith(
-            fontWeight: FontWeight.w500,
-            color: AppColorScheme.onPrimary,
-          ),
-        ),
-        leading: Padding(
-          padding: EdgeInsets.only(left: 16.w),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: SvgPicture.asset(AppIcons.backButton),
-          ),
-        ),
-      );
-}
 
 
 }

@@ -16,7 +16,8 @@ class _SplashScreenState extends State<SplashScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Future.delayed(const Duration(milliseconds: 1200), () {
         if (mounted) {
-          context.go(RouteName.profileScreen);
+           context.go(RouteName.onboardingScreen);
+
           debugPrint("\nSplash Completed.\n");
         }
       });

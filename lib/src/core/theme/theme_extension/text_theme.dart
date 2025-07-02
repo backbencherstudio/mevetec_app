@@ -7,17 +7,17 @@ import 'color_scheme.dart';
 class AppTextTheme {
   static final TextTheme darkTextTheme = TextTheme(
     ///display
-    displayLarge: GoogleFonts.poppins(
+    headlineLarge: GoogleFonts.poppins(
       fontSize: 32.0.sp,
       fontWeight: FontWeight.w600,
       color: AppColorScheme.onPrimary,
     ),
-    displayMedium: GoogleFonts.poppins(
+    headlineMedium: GoogleFonts.poppins(
       fontSize: 28.0.sp,
       fontWeight: FontWeight.w600,
       color: AppColorScheme.onPrimary,
     ),
-    displaySmall: GoogleFonts.poppins(
+    headlineSmall: GoogleFonts.poppins(
       fontSize: 24.0.sp,
       fontWeight: FontWeight.w700,
       color: AppColorScheme.onPrimary,

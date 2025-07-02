@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mevetec_app/src/core/theme/part/app_bar_theme.dart';
 
 import 'part/elevated_button_theme.dart';
 import 'part/input_decoration_theme.dart';
@@ -13,5 +14,6 @@ class AppTheme {
     colorScheme: AppColorScheme.colorScheme,
     inputDecorationTheme: AppInputDecorationTheme.darkInputDecorationTheme,
     elevatedButtonTheme: AppEvaluatedButtonThemes.darkEvaluatedButtonTheme,
+    appBarTheme: CustomAppBarTheme.lightAppBarTheme,
   );
 }

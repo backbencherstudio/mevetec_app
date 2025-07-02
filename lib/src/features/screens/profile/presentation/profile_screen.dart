@@ -16,11 +16,12 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonWidget.appBar(title: "Account", context: context),
+
       body: Padding(
         padding: AppPadding.horizontalPadding,
         child: Column(
           children: [
+            CommonWidget.appBar(title: "Account",),
             SizedBox(height: 24.w),
             ProfileDisplay(),
             SizedBox(height: 32.h),
