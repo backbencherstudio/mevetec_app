@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mevetec_app/src/core/routes/route_name.dart';
-
 import '../../../../core/constant/images.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,6 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Future.delayed(const Duration(milliseconds: 1200), () {
         if (mounted) {
            context.go(RouteName.onboardingScreen);
+
           debugPrint("\nSplash Completed.\n");
         }
       });

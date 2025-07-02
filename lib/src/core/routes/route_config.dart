@@ -15,7 +15,6 @@ class RouteConfig {
           );
         },
       ),
-
       GoRoute(
         path: RouteName.onboardingScreen,
         pageBuilder: (context, state) {
@@ -24,6 +23,19 @@ class RouteConfig {
             state: state,
             transitionType: PageTransitionType.slideBottomToTop,
             child: OnboardingScreen(),
+          );
+        },
+      ),
+
+
+       GoRoute(
+        path: RouteName.profileScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: ProfileScreen(),
           );
         },
       ),
