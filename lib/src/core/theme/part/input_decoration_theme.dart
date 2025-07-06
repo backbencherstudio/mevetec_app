@@ -25,22 +25,19 @@ class AppInputDecorationTheme {
       fontWeight: FontWeight.w400,
       color: Color(0xffFC5733),
     ),
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10.r),
+    border: UnderlineInputBorder(
       borderSide: BorderSide(color: Color(0xff4A4C56)),
     ),
-    enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10.r),
+    enabledBorder: UnderlineInputBorder(
       borderSide: BorderSide(color: Color(0xff4A4C56)),
     ),
-    focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10.r),
+    focusedBorder: UnderlineInputBorder(
       borderSide: BorderSide(
         color: AppColorScheme.primary.withValues(alpha: 0.5),
       ),
     ),
     disabledBorder: InputBorder.none,
-    errorBorder: OutlineInputBorder(
+    errorBorder: UnderlineInputBorder(
       borderRadius: BorderRadius.circular(10.r),
       borderSide: BorderSide(color: Color(0xff4A4C56)),
     ),

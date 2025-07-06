@@ -12,4 +12,6 @@ class AppIcons {
   static const String forwardIcon = "$profilePath/forwardArrow.svg";
 
   static const String editIcon = "$profilePath/editImg.svg";
+  static const String dropdown = "$profilePath/dropdown.svg";
+  static const String calender = "$profilePath/calender.svg";
 }
