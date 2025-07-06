@@ -6,9 +6,9 @@ import 'package:mevetec_app/src/core/constant/icons.dart';
 import 'package:mevetec_app/src/core/constant/padding.dart';
 import 'package:mevetec_app/src/core/theme/theme_extension/color_scheme.dart';
 import 'package:mevetec_app/src/features/common_widegts/commonWidget.dart';
-import 'package:mevetec_app/src/features/screens/profile/Riverpod/listProvider.dart';
-import 'package:mevetec_app/src/features/screens/profile/presentation/widgets/customListTile.dart';
-import 'package:mevetec_app/src/features/screens/profile/presentation/widgets/profile_display.dart';
+import 'package:mevetec_app/src/features/screens/profile/acount/Riverpod/listProvider.dart';
+import 'package:mevetec_app/src/features/screens/profile/acount/presentation/widgets/custom_list_tile.dart';
+import 'package:mevetec_app/src/features/screens/profile/acount/presentation/widgets/profile_display.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
