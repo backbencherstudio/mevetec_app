@@ -10,8 +10,8 @@ class AppIcons {
   static const String privacyIcon = "$profilePath/lock.svg";
   static const String logoutIcon = "$profilePath/logout.svg";
   static const String forwardIcon = "$profilePath/forwardArrow.svg";
-
   static const String editIcon = "$profilePath/editImg.svg";
   static const String dropdown = "$profilePath/dropdown.svg";
   static const String calender = "$profilePath/calender.svg";
+  static const String masterCard = "$profilePath/mastercard.svg";
 }

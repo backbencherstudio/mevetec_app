@@ -5,6 +5,7 @@ import 'package:mevetec_app/src/features/screens/auth/presentation/complete_prof
 import 'package:mevetec_app/src/features/screens/auth/presentation/login_screen.dart';
 import 'package:mevetec_app/src/features/screens/auth/presentation/otp_screen.dart';
 import 'package:mevetec_app/src/features/screens/auth/presentation/success_screen.dart';
+import 'package:mevetec_app/src/features/screens/profile/charging_activity/presentation/charging_activity_screen.dart';
 
 import 'package:mevetec_app/src/features/screens/profile/personal_info/presentation/profile_info_screen.dart';
 

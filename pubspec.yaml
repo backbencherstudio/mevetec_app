@@ -45,6 +45,7 @@ dependencies:
   horizontal_list_calendar: ^1.0.0
   go_router: ^15.1.3
   intl_phone_number_input: ^0.7.4
+  dotted_line: ^3.2.3
 
 dev_dependencies:
   flutter_test:
