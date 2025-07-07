@@ -2,7 +2,7 @@ part of 'route_import_part.dart';
 
 class RouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: RouteName.splashScreen, /// Start at the splash screen
+    initialLocation: RouteName.profileScreen, /// Start at the splash screen
     routes: [
       GoRoute(
         path: RouteName.splashScreen,
@@ -23,6 +23,28 @@ class RouteConfig {
             state: state,
             transitionType: PageTransitionType.slideBottomToTop,
             child: OnboardingScreen(),
+          );
+        },
+      ),
+ GoRoute(
+        path: RouteName.paymentMthdScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: PaymentMthdScreen(),
+          );
+        },
+      ),
+        GoRoute(
+        path: RouteName.chargingActivityScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideBottomToTop,
+            child: ChargingActivityScreen(),
           );
         },
       ),
@@ -88,6 +110,28 @@ class RouteConfig {
       ),
 
 
+        GoRoute(
+        path: RouteName.addNewPaymentMthdScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: AddNewPaymentMthdScreen(),
+          );
+        },
+      ),
+  GoRoute(
+        path: RouteName.savedPlaceScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: SavedPlaceScreen(),
+          );
+        },
+      ),
 
         GoRoute(
         path: RouteName.otpScreen,

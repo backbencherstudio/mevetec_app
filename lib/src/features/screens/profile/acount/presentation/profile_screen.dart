@@ -9,6 +9,7 @@ import 'package:mevetec_app/src/features/common_widegts/commonWidget.dart';
 import 'package:mevetec_app/src/features/screens/profile/acount/Riverpod/listProvider.dart';
 import 'package:mevetec_app/src/features/screens/profile/acount/presentation/widgets/custom_list_tile.dart';
 import 'package:mevetec_app/src/features/screens/profile/acount/presentation/widgets/profile_display.dart';
+import 'package:mevetec_app/src/features/screens/profile/logout/presentation/logout_sheet.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -29,32 +30,32 @@ class ProfileScreen extends StatelessWidget {
                 SizedBox(height: 32.h),
                 Divider(color: AppColorScheme.onSurface, thickness: 0.5),
                 SizedBox(
-                  child: Expanded(
-                    child: Consumer(
-                      builder: (context, ref, _) {
-                        final tileInfo = ref.watch(listProvider);
-                        return ListView.builder(
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          itemCount: tileInfo.length,
-                          itemBuilder: (context, index) {
-                            return Customlisttile(
-                              title: tileInfo[index].name,
-                              leadingIcon: tileInfo[index].imgIcon,
-                              onTap: () {
-                                context.push(tileInfo[index].routName);
-                              },
-                            );
-                          },
-                        );
-                      },
-                    ),
+                  child: Consumer(
+                    builder: (context, ref, _) {
+                      final tileInfo = ref.watch(listProvider);
+                      return ListView.builder(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemCount: tileInfo.length,
+                        itemBuilder: (context, index) {
+                          return Customlisttile(
+                            title: tileInfo[index].name,
+                            leadingIcon: tileInfo[index].imgIcon,
+                            onTap: () {
+                              context.push(tileInfo[index].routName);
+                            },
+                          );
+                        },
+                      );
+                    },
                   ),
                 ),
                 SizedBox(height: 32.h),
                 Customlisttile(
                   title: "Logout",
-                  onTap: () {},
+                  onTap: () {
+                    showLogouttSheet(context);
+                  },
                   textColor: AppColorScheme.error,
                   textSize: 18.sp,
                   leadingIcon: AppIcons.logoutIcon,

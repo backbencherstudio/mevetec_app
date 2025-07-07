@@ -7,4 +7,8 @@ class RouteName {
   static const String otpScreen = "/OtpScreen";
   static const String completeProfileScreen = '/CompleteProfileScreen';
   static const String successScreen = "/SuccessScreen";
+  static const String chargingActivityScreen = "/ChargingActivityScreen";
+  static const String paymentMthdScreen = "/PaymentMthdScreen";
+  static const String addNewPaymentMthdScreen = "/AddNewPaymentMthdScreen";
+  static const String savedPlaceScreen = "/SavedPlaceScreen";
 }
