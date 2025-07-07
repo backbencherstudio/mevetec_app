@@ -26,7 +26,17 @@ class RouteConfig {
           );
         },
       ),
-
+ GoRoute(
+        path: RouteName.paymentMthdScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: PaymentMthdScreen(),
+          );
+        },
+      ),
         GoRoute(
         path: RouteName.chargingActivityScreen,
         pageBuilder: (context, state) {
@@ -100,6 +110,17 @@ class RouteConfig {
       ),
 
 
+        GoRoute(
+        path: RouteName.addNewPaymentMthdScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: AddNewPaymentMthdScreen(),
+          );
+        },
+      ),
 
         GoRoute(
         path: RouteName.otpScreen,

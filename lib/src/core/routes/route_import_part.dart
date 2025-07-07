@@ -6,6 +6,8 @@ import 'package:mevetec_app/src/features/screens/auth/presentation/login_screen.
 import 'package:mevetec_app/src/features/screens/auth/presentation/otp_screen.dart';
 import 'package:mevetec_app/src/features/screens/auth/presentation/success_screen.dart';
 import 'package:mevetec_app/src/features/screens/profile/charging_activity/presentation/charging_activity_screen.dart';
+import 'package:mevetec_app/src/features/screens/profile/payment_methods/presentation/add_new_payment_mthd/add_new_payment_mthd_screen.dart';
+import 'package:mevetec_app/src/features/screens/profile/payment_methods/presentation/payment_mthd_screen.dart';
 
 import 'package:mevetec_app/src/features/screens/profile/personal_info/presentation/profile_info_screen.dart';
 

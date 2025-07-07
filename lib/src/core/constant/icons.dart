@@ -14,4 +14,6 @@ class AppIcons {
   static const String dropdown = "$profilePath/dropdown.svg";
   static const String calender = "$profilePath/calender.svg";
   static const String masterCard = "$profilePath/mastercard.svg";
+  static const String scanner = "$profilePath/scanner.svg";
+  static const String cross = "$profilePath/cross.svg";
 }
