@@ -10,4 +10,5 @@ class RouteName {
   static const String chargingActivityScreen = "/ChargingActivityScreen";
   static const String paymentMthdScreen = "/PaymentMthdScreen";
   static const String addNewPaymentMthdScreen = "/AddNewPaymentMthdScreen";
+  static const String savedPlaceScreen = "/SavedPlaceScreen";
 }

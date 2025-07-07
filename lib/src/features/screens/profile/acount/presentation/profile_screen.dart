@@ -9,6 +9,7 @@ import 'package:mevetec_app/src/features/common_widegts/commonWidget.dart';
 import 'package:mevetec_app/src/features/screens/profile/acount/Riverpod/listProvider.dart';
 import 'package:mevetec_app/src/features/screens/profile/acount/presentation/widgets/custom_list_tile.dart';
 import 'package:mevetec_app/src/features/screens/profile/acount/presentation/widgets/profile_display.dart';
+import 'package:mevetec_app/src/features/screens/profile/logout/presentation/logout_sheet.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -52,7 +53,9 @@ class ProfileScreen extends StatelessWidget {
                 SizedBox(height: 32.h),
                 Customlisttile(
                   title: "Logout",
-                  onTap: () {},
+                  onTap: () {
+                    showLogouttSheet(context);
+                  },
                   textColor: AppColorScheme.error,
                   textSize: 18.sp,
                   leadingIcon: AppIcons.logoutIcon,

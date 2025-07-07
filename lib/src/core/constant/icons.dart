@@ -16,4 +16,7 @@ class AppIcons {
   static const String masterCard = "$profilePath/mastercard.svg";
   static const String scanner = "$profilePath/scanner.svg";
   static const String cross = "$profilePath/cross.svg";
+  static const String penIcon = "$profilePath/editPen.svg";
+   static const String homeIcon = "$profilePath/homeIcon.svg";
+   static const String officeIcon = "$profilePath/officeBuilding.svg";
 }

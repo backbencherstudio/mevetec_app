@@ -14,7 +14,7 @@ class CustomBillContainer extends StatelessWidget {
     final textStyle = Theme.of(context).textTheme;
 
     return Padding(
-      padding:  EdgeInsets.only(top:24.h),
+      padding: EdgeInsets.only(top: 24.h),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -34,7 +34,7 @@ class CustomBillContainer extends StatelessWidget {
                   color: AppColorScheme.onPrimary,
                 ),
               ),
-      
+
               SizedBox(height: 4.h),
               Text(
                 "5-33 Samin Long UK",
@@ -70,7 +70,7 @@ class CustomBillContainer extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 24.h),
-      
+
               DottedLine(
                 direction: Axis.horizontal,
                 alignment: WrapAlignment.center,
@@ -81,7 +81,7 @@ class CustomBillContainer extends StatelessWidget {
                 dashGapColor: Colors.transparent,
                 dashGapRadius: 0.0,
               ),
-      
+
               SizedBox(height: 24.h),
               Align(
                 alignment: Alignment.center,
@@ -89,9 +89,16 @@ class CustomBillContainer extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h)
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: 8.h,
+                      ),
                     ),
-                    onPressed: () {}, child: Text("Download Invoice")))),
+                    onPressed: () {},
+                    child: Text("Download Invoice"),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
