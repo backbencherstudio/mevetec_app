@@ -27,7 +27,7 @@ class SuccessScreen extends StatelessWidget {
         ),
         child: ElevatedButton(
           onPressed: () {
-            context.push(RouteName.splashScreen);
+            context.go(RouteName.homeScreen);
           },
           child: Text("Continue"),
         ),

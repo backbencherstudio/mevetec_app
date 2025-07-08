@@ -20,10 +20,9 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Column(
         children: [
-         CommonWidget.appBar(title: "Account",),
+          CommonWidget.appBar(title: "Account"),
           Padding(
             padding: AppPadding.horizontalPadding,
             child: Column(

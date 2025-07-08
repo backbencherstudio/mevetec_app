@@ -51,7 +51,8 @@ class PaymentMthdScreen extends StatelessWidget {
                             SizedBox(height: 24.h),
 
                             AddNewPaymentTile(onTap: () {
-                              context.push(RouteName.addNewPaymentMthdScreen);
+                              context.push(RouteName.addNewPaymentMethodScreen
+                              );
                             }),
                             SizedBox(height: 50.h),
                           ],

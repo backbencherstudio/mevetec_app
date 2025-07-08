@@ -4,7 +4,7 @@ import 'package:mevetec_app/src/core/routes/route_name.dart';
 import 'package:mevetec_app/src/features/screens/home_screens/presentation/home_screen.dart';
 import 'package:mevetec_app/src/features/screens/home_screens/presentation/qr_scanner_screen/qr_scanner_screen.dart';
 import 'package:mevetec_app/src/features/screens/auth/presentation/complete_profile_screen.dart';
-import 'package:mevetec_app/src/features/screens/auth/presentation/login_screen.dart';
+import 'package:mevetec_app/src/features/screens/auth/presentation/sign_up_screen.dart';
 import 'package:mevetec_app/src/features/screens/auth/presentation/otp_screen.dart';
 import 'package:mevetec_app/src/features/screens/auth/presentation/success_screen.dart';
 import 'package:mevetec_app/src/features/screens/location/location.dart';

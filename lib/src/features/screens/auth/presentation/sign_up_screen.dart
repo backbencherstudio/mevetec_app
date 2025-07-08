@@ -9,8 +9,8 @@ import '../../../../core/constant/padding.dart';
 import '../../../../core/theme/theme_extension/color_scheme.dart';
 import '../../../common_widegts/commonWidget.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          CommonWidget.appBar(title: ""),
+           CommonWidget.appBar(title: ""),
 
           Padding(
             padding: AppPadding.horizontalPadding,
