@@ -26,7 +26,50 @@ class RouteConfig {
           );
         },
       ),
-
+ GoRoute(
+        path: RouteName.paymentMthdScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: PaymentMthdScreen(),
+          );
+        },
+      ),
+        GoRoute(
+        path: RouteName.chargingActivityScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideBottomToTop,
+            child: ChargingActivityScreen(),
+          );
+        },
+      ),
+        GoRoute(
+        path: RouteName.successScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideBottomToTop,
+            child: SuccessScreen(),
+          );
+        },
+      ),
+  GoRoute(
+        path: RouteName.completeProfileScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideBottomToTop,
+            child: CompleteProfileScreen(),
+          );
+        },
+      ),
 
        GoRoute(
         path: RouteName.profileScreen,
@@ -52,26 +95,76 @@ class RouteConfig {
         },
       ),
 
-      GoRoute(path: RouteName.homeScreen,
+
+
+        GoRoute(
+        path: RouteName.loginScreen,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
             context: context,
             state: state,
-            transitionType: PageTransitionType.fade,
-            child: HomeScreen(),
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: LoginScreen(),
           );
         },
       ),
-      GoRoute(path: RouteName.qrScanner,
+
+
+        GoRoute(
+        path: RouteName.addNewPaymentMthdScreen,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
             context: context,
             state: state,
-            transitionType: PageTransitionType.fade,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: AddNewPaymentMthdScreen(),
+          );
+        },
+      ),
+  GoRoute(
+        path: RouteName.savedPlaceScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: SavedPlaceScreen(),
+          );
+        },
+      ),
+
+        GoRoute(
+        path: RouteName.otpScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: OtpScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        path: RouteName.homeScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: HomeScreen(),
+          );
+        },
+      ), GoRoute(
+        path: RouteName.qrScanner,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
             child: QrScannerScreen(),
           );
         },
-      )
+      ),
     ],
   );
 }

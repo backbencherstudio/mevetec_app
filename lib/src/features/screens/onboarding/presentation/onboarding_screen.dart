@@ -1,8 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mevetec_app/src/core/constant/images.dart';
 import 'package:mevetec_app/src/core/constant/padding.dart';
+import 'package:mevetec_app/src/core/routes/route_name.dart';
 import 'package:mevetec_app/src/core/theme/theme_extension/color_scheme.dart';
 import 'package:mevetec_app/src/features/common_widegts/social_login_buttons/apple_login_button.dart';
 import 'package:mevetec_app/src/features/common_widegts/social_login_buttons/google_login_button.dart';
@@ -32,7 +34,9 @@ class OnboardingScreen extends StatelessWidget{
                   Text("Welcome to Joul — Your EV Charging Companion",style: textTheme.bodyMedium?.copyWith(color: AppColorScheme.onSurface),),
                   SizedBox(height: 20.h,),
                   SizedBox(width: double.infinity,
-                  child: ElevatedButton(onPressed: (){}, child: Text("Continue with Phone Number")),
+                  child: ElevatedButton(onPressed: (){
+                    context.push(RouteName.loginScreen);
+                  }, child: Text("Continue with Phone Number")),
                   ),
                   SizedBox(height: 32.h,),
                   Row(
