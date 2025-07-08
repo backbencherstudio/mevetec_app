@@ -5,9 +5,13 @@ import 'package:go_router/go_router.dart';
 import 'package:mevetec_app/src/core/routes/route_name.dart';
 
 import '../../../../../core/theme/theme_extension/color_scheme.dart';
+import '../../../../common_widegts/bottom_nav_bar/bottom_sheet_provider.dart';
 
-void showLogouttSheet(BuildContext context) {
+void showLogouttSheet(BuildContext context, WidgetRef ref) {
   final textStyle = Theme.of(context).textTheme;
+
+  /// Set bottom sheet visibility to true when showing the logout sheet
+  ref.read(bottomSheetVisibilityProvider.notifier).state = true;
 
   showModalBottomSheet(
     context: context,
@@ -17,7 +21,7 @@ void showLogouttSheet(BuildContext context) {
     builder: (context) {
       return IntrinsicHeight(
         child: Container(
-          padding:  EdgeInsets.all(24.r),
+          padding: EdgeInsets.all(24.r),
           margin: EdgeInsets.only(
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
@@ -66,7 +70,7 @@ void showLogouttSheet(BuildContext context) {
                       Expanded(
                         child: SizedBox(
                           height: 62.h,
-                          width:183.w ,
+                          width: 183.w,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color(0xff1C1E22),
@@ -76,7 +80,7 @@ void showLogouttSheet(BuildContext context) {
                               ),
                             ),
                             onPressed: () {
-                              Navigator.pop(context);
+                              Navigator.pop(context); // Close the sheet
                             },
                             child: Text("Cancel"),
                           ),
@@ -85,8 +89,8 @@ void showLogouttSheet(BuildContext context) {
                       SizedBox(width: 16.w),
                       Expanded(
                         child: SizedBox(
-                           height: 62.h,
-                          width:183.w ,
+                          height: 62.h,
+                          width: 183.w,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: AppColorScheme.primary,
@@ -96,7 +100,7 @@ void showLogouttSheet(BuildContext context) {
                               ),
                             ),
                             onPressed: () {
-                              context.push(RouteName.onboardingScreen);
+                              context.push(RouteName.onboardingScreen); // Navigate to onboarding
                             },
                             child: Text("Yes, Logout"),
                           ),
@@ -111,5 +115,8 @@ void showLogouttSheet(BuildContext context) {
         ),
       );
     },
-  );
+  ).whenComplete(() {
+    // Reset bottom sheet visibility to false after the sheet is dismissed
+    ref.read(bottomSheetVisibilityProvider.notifier).state = false;
+  });
 }

@@ -58,7 +58,10 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    _openBottomSheet(context);
+
+                  },
                   child: Text('Find Location'),
                 ),
               ),
@@ -66,6 +69,31 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+  void _openBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 200, // Adjust the height as needed
+          color: Colors.white,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Location Finder', style: TextStyle(fontSize: 18)),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // Close the bottom sheet when button is pressed
+                  Navigator.pop(context);
+                },
+                child: const Text('Close Bottom Sheet'),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
