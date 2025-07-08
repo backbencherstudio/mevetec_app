@@ -1,6 +1,8 @@
 
 import 'package:go_router/go_router.dart';
 import 'package:mevetec_app/src/core/routes/route_name.dart';
+import 'package:mevetec_app/src/features/screens/home_screens/presentation/home_screen.dart';
+import 'package:mevetec_app/src/features/screens/home_screens/presentation/qr_scanner_screen/qr_scanner_screen.dart';
 
 import 'package:mevetec_app/src/features/screens/profile/presentation/profile_info/profile_info_screen.dart';
 

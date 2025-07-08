@@ -2,7 +2,7 @@ part of 'route_import_part.dart';
 
 class RouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: RouteName.profileScreen, /// Start at the splash screen
+    initialLocation: RouteName.homeScreen, /// Start at the splash screen
     routes: [
       GoRoute(
         path: RouteName.splashScreen,
@@ -51,6 +51,27 @@ class RouteConfig {
           );
         },
       ),
+
+      GoRoute(path: RouteName.homeScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.fade,
+            child: HomeScreen(),
+          );
+        },
+      ),
+      GoRoute(path: RouteName.qrScanner,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.fade,
+            child: QrScannerScreen(),
+          );
+        },
+      )
     ],
   );
 }

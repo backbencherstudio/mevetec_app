@@ -25,9 +25,10 @@ class AppInputDecorationTheme {
       fontWeight: FontWeight.w400,
       color: Color(0xffFC5733),
     ),
+
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.r),
-      borderSide: BorderSide(color: Color(0xff4A4C56)),
+      borderSide: BorderSide(color: Color(0xff4A4C56),),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.r),

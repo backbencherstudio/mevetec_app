@@ -43,6 +43,8 @@ dependencies:
   intl: ^0.20.2
   horizontal_list_calendar: ^1.0.0
   go_router: ^15.1.3
+  mobile_scanner: ^7.0.1
+  torch_light: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +74,8 @@ flutter:
     - assets/images/
     - assets/
     - assets/icons/
+    - assets/images/home_flow/
+    - assets/icons/home/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
