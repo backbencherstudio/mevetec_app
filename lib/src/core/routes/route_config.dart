@@ -4,6 +4,36 @@ class RouteConfig {
   GoRouter goRouter = GoRouter(
     initialLocation: RouteName.homeScreen, /// Start at the splash screen
     routes: [
+      StatefulShellRoute.indexedStack(
+        builder: (context, state, navigationShell) =>
+            BottomNavBar(navigationShell: navigationShell),
+        branches: [
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: RouteName.homeScreen,
+                builder: (context, state) => const HomeScreen(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: RouteName.locationScreen,
+                builder: (context, state) => const Location(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: RouteName.profileScreen,
+                builder: (context, state) => const ProfileScreen(),
+              ),
+            ],
+          ),
+        ],
+      ),
       GoRoute(
         path: RouteName.splashScreen,
         pageBuilder: (context, state) {
@@ -144,17 +174,7 @@ class RouteConfig {
           );
         },
       ),
-      GoRoute(
-        path: RouteName.homeScreen,
-        pageBuilder: (context, state) {
-          return buildPageWithTransition(
-            context: context,
-            state: state,
-            transitionType: PageTransitionType.slideRightToLeft,
-            child: HomeScreen(),
-          );
-        },
-      ), GoRoute(
+       GoRoute(
         path: RouteName.qrScanner,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
