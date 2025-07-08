@@ -17,6 +17,14 @@ class AppIcons {
   static const String scanner = "$profilePath/scanner.svg";
   static const String cross = "$profilePath/cross.svg";
   static const String penIcon = "$profilePath/editPen.svg";
-   static const String homeIcon = "$profilePath/homeIcon.svg";
-   static const String officeIcon = "$profilePath/officeBuilding.svg";
+  static const String homeIcon = "$profilePath/homeIcon.svg";
+  static const String officeIcon = "$profilePath/officeBuilding.svg";
+
+  static const String bottomNavIcon = "assets/icons/bottom_nav_bar";
+  static const String homeOutlined = "$bottomNavIcon/home_outlined.svg";
+  static const String homeSolid = "$bottomNavIcon/home_solid.svg";
+  static const String locationOutlined = "$bottomNavIcon/location_outlined.svg";
+  static const String locationSolid = "$bottomNavIcon/location_solid.svg";
+  static const String userOutlined = "$bottomNavIcon/user_outlined.svg";
+  static const String userSolid = "$bottomNavIcon/user_solid.svg";
 }

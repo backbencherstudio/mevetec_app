@@ -44,6 +44,8 @@ dependencies:
   pin_code_fields: ^8.0.1
   horizontal_list_calendar: ^1.0.0
   go_router: ^15.1.3
+  mobile_scanner: ^7.0.1
+  torch_light: ^1.1.0
   intl_phone_number_input: ^0.7.4
   dotted_line: ^3.2.3
 
@@ -75,6 +77,9 @@ flutter:
     - assets/images/
     - assets/
     - assets/icons/
+    - assets/images/home_flow/
+    - assets/icons/home/
+    - assets/icons/bottom_nav_bar/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

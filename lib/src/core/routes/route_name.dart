@@ -3,6 +3,8 @@ class RouteName {
   static const String onboardingScreen = "/onboarding";
   static const String profileScreen = "/ProfileScreen";
   static const String profileInfoScreen = "/ProfileInfoScreen";
+  static const String homeScreen = "/home-screen";
+  static const String qrScanner = '/qr-scanner';
   static const String loginScreen ="/LoginScreen";
   static const String otpScreen = "/OtpScreen";
   static const String completeProfileScreen = '/CompleteProfileScreen';
@@ -11,4 +13,5 @@ class RouteName {
   static const String paymentMthdScreen = "/PaymentMthdScreen";
   static const String addNewPaymentMthdScreen = "/AddNewPaymentMthdScreen";
   static const String savedPlaceScreen = "/SavedPlaceScreen";
+  static const String locationScreen = "/SavedPlaceScreen";
 }
