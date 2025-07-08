@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:http/http.dart' as ref;
 import 'package:mevetec_app/src/core/constant/icons.dart';
 import 'package:mevetec_app/src/core/constant/padding.dart';
 import 'package:mevetec_app/src/core/theme/theme_extension/color_scheme.dart';
@@ -10,6 +11,8 @@ import 'package:mevetec_app/src/features/screens/profile/acount/Riverpod/listPro
 import 'package:mevetec_app/src/features/screens/profile/acount/presentation/widgets/custom_list_tile.dart';
 import 'package:mevetec_app/src/features/screens/profile/acount/presentation/widgets/profile_display.dart';
 import 'package:mevetec_app/src/features/screens/profile/logout/presentation/logout_sheet.dart';
+
+import '../../../../common_widegts/bottom_nav_bar/bottom_sheet_provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -51,15 +54,19 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 32.h),
-                Customlisttile(
-                  title: "Logout",
-                  onTap: () {
-                    showLogouttSheet(context);
-                  },
-                  textColor: AppColorScheme.error,
-                  textSize: 18.sp,
-                  leadingIcon: AppIcons.logoutIcon,
-                  isLeadingOff: true,
+                Consumer(
+                  builder: (context, ref,_) {
+                    return Customlisttile(
+                      title: "Logout",
+                      onTap: () {
+                        showLogouttSheet(context,ref);
+                      },
+                      textColor: AppColorScheme.error,
+                      textSize: 18.sp,
+                      leadingIcon: AppIcons.logoutIcon,
+                      isLeadingOff: true,
+                    );
+                  }
                 ),
               ],
             ),

@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mevetec_app/src/core/routes/route_name.dart';
 
+import '../../../../../core/routes/route_name.dart';
 import '../../../../../core/theme/theme_extension/color_scheme.dart';
+import '../../../../common_widegts/bottom_nav_bar/bottom_sheet_provider.dart';
 
-void showLogouttSheet(BuildContext context) {
+void showLogouttSheet(BuildContext context, WidgetRef ref) {
   final textStyle = Theme.of(context).textTheme;
+
+  ref.read(bottomSheetVisibilityProvider.notifier).state = true;
 
   showModalBottomSheet(
     context: context,
@@ -19,7 +22,6 @@ void showLogouttSheet(BuildContext context) {
         padding: EdgeInsets.only(
           bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
-
         child: IntrinsicHeight(
           child: ClipPath(
             child: Container(
@@ -69,7 +71,7 @@ void showLogouttSheet(BuildContext context) {
                           Expanded(
                             child: SizedBox(
                               height: 62.h,
-                              width:183.w ,
+                              width: 183.w,
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Color(0xff1C1E22),
@@ -88,8 +90,8 @@ void showLogouttSheet(BuildContext context) {
                           SizedBox(width: 16.w),
                           Expanded(
                             child: SizedBox(
-                               height: 62.h,
-                              width:183.w ,
+                              height: 62.h,
+                              width: 183.w,
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: AppColorScheme.primary,
@@ -116,5 +118,7 @@ void showLogouttSheet(BuildContext context) {
         ),
       );
     },
-  );
+  ).whenComplete(() {
+    ref.read(bottomSheetVisibilityProvider.notifier).state = false;
+  });
 }
