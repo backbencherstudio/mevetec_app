@@ -5,13 +5,13 @@ class RouteName {
   static const String profileInfoScreen = "/ProfileInfoScreen";
   static const String homeScreen = "/home-screen";
   static const String qrScanner = '/qr-scanner';
-  static const String loginScreen ="/LoginScreen";
+  static const String signUpScreen ="/sign-up-screens";
   static const String otpScreen = "/OtpScreen";
   static const String completeProfileScreen = '/CompleteProfileScreen';
   static const String successScreen = "/SuccessScreen";
   static const String chargingActivityScreen = "/ChargingActivityScreen";
-  static const String paymentMthdScreen = "/PaymentMthdScreen";
-  static const String addNewPaymentMthdScreen = "/AddNewPaymentMthdScreen";
+  static const String paymentMethodScreen = "/PaymentMethodScreen";
+  static const String addNewPaymentMethodScreen = "/AddNewPaymentMethodScreen";
   static const String savedPlaceScreen = "/SavedPlaceScreen";
   static const String locationScreen = "/SavedPlaceScreen";
 }
