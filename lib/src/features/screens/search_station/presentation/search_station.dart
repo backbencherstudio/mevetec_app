@@ -18,10 +18,13 @@ class SearchStation extends ConsumerStatefulWidget {
 }
 
 class _SearchStationState extends ConsumerState<SearchStation> {
-  FocusNode _focusNode = FocusNode();
+  late final FocusNode _focusNode;
+  late final TextEditingController _searchController;
 
   @override
   void initState() {
+    _focusNode = FocusNode();
+    _searchController = TextEditingController();
     super.initState();
     _focusNode.addListener(() {
       if (!_focusNode.hasFocus) {
@@ -31,73 +34,121 @@ class _SearchStationState extends ConsumerState<SearchStation> {
   }
 
   @override
+  void dispose() {
+    _focusNode.dispose();
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
     final searchResult = ref.watch(searchProvider);
 
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: AppPadding.horizontalPadding,
-          child: Column(
-            children: [
-              TextFormField(
-                focusNode: _focusNode,
-                decoration: InputDecoration(
-                  hintText: 'Search',
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(color: AppColorScheme.shadowColor),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(
-                      color: AppColorScheme.borderColor.withValues(alpha: 0.5),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Positioned.fill(
+              child: Padding(
+                padding: AppPadding.horizontalPadding,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      focusNode: _focusNode,
+                      onTapOutside: (_) {
+                        if (_searchController.text.isEmpty) {
+                          _focusNode.unfocus();
+                        }
+                      },
+                      decoration: InputDecoration(
+                        hintText: 'Search',
+                        prefixIcon: Icon(Icons.search),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(
+                            color: AppColorScheme.shadowColor,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(
+                            color: AppColorScheme.borderColor.withValues(
+                              alpha: 0.5,
+                            ),
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(
+                            color: AppColorScheme.borderColor,
+                          ),
+                        ),
+                      ),
+                      onChanged: (value) {
+                        ref
+                            .read(searchProvider.notifier)
+                            .searchQuery(query: value);
+                      },
                     ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(color: AppColorScheme.borderColor),
-                  ),
-                ),
-                onChanged: (value) {
-                  ref.read(searchProvider.notifier).searchQuery(query: value);
-                },
-              ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: searchResult.filteredQuery.length,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        CustomListTile(
-                          icon: index%2 == 0? AppIcons.locationRed : AppIcons.locationGreen,
-                          title: searchResult.filteredQuery[index],
-                        ),
-                        Divider(
-                          color: AppColorScheme.onSurface,
-                          thickness: 0.5,
-                        ),
-                      ],
-                    );
-                  },
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: searchResult.filteredQuery.length,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            children: [
+                              CustomListTile(
+                                icon: index % 2 == 0
+                                    ? AppIcons.locationRed
+                                    : AppIcons.locationGreen,
+                                title: searchResult.filteredQuery[index],
+                              ),
+                              Divider(
+                                color: AppColorScheme.onSurface,
+                                thickness: 0.5,
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+                    ),
+                    SizedBox(height: 30.h),
+                  ],
                 ),
               ),
-              SizedBox(height: 30.h),
-              GestureDetector(
+            ),
+
+            Positioned(
+              left: 0,
+             // right: 0,
+              bottom: 100.h,
+              child: GestureDetector(
                 onTap: () {
                   context.push(RouteName.allStationList);
                 },
-                child: Text(
-                  'View all station list',
-                  style: textTheme.bodyLarge!.copyWith(
-                    color: AppColorScheme.primary,
+                child: Container(
+                  margin: AppPadding.horizontalPadding,
+                  padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 19.h),
+                  decoration: BoxDecoration(
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color.fromRGBO(0, 0, 0, 0.16)
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(999),
+                    color: AppColorScheme.surface
+                  ),
+                  child: Text(
+                    'View all station list',
+                    style: textTheme.bodyLarge!.copyWith(
+                      color: AppColorScheme.primary,
+                    ),
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

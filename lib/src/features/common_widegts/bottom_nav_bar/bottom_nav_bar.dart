@@ -21,45 +21,47 @@ class BottomNavBar extends ConsumerWidget {
 
     return Scaffold(
       body: navigationShell,
-      floatingActionButton: isBottomSheetOpen
+      bottomNavigationBar: isBottomSheetOpen
           ? SizedBox.shrink() // Hide nav bar when bottom sheet is open
-          : ClipRRect(
-        borderRadius: BorderRadius.circular(60.r),
-        child: Container(
-          height: 80.h,
-          margin: EdgeInsets.symmetric(horizontal: 40.w),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(60.r),
+          : SafeArea(
+            child: ClipRRect(
+                    borderRadius: BorderRadius.circular(60.r),
+                    child: Container(
+            height: 80.h,
+            margin: EdgeInsets.only(left: 40.w,right: 40.w,bottom: 20.h),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(60.r),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _buildNavItem(
+                  index: 0,
+                  icon: AppIcons.homeSolid,
+                  outlineIcon: AppIcons.homeOutlined,
+                  label: 'Home',
+                  onTap: () => navigationShell.goBranch(0),
+                ),
+                _buildNavItem(
+                  index: 1,
+                  icon: AppIcons.locationSolid,
+                  outlineIcon: AppIcons.locationOutlined,
+                  label: 'Map',
+                  onTap: () => navigationShell.goBranch(1),
+                ),
+                _buildNavItem(
+                  index: 2,
+                  icon: AppIcons.userSolid,
+                  outlineIcon: AppIcons.userOutlined,
+                  label: 'Profile',
+                  onTap: () => navigationShell.goBranch(2),
+                ),
+              ],
+            ),
+                    ),
+                  ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildNavItem(
-                index: 0,
-                icon: AppIcons.homeSolid,
-                outlineIcon: AppIcons.homeOutlined,
-                label: 'Home',
-                onTap: () => navigationShell.goBranch(0),
-              ),
-              _buildNavItem(
-                index: 1,
-                icon: AppIcons.locationSolid,
-                outlineIcon: AppIcons.locationOutlined,
-                label: 'Map',
-                onTap: () => navigationShell.goBranch(1),
-              ),
-              _buildNavItem(
-                index: 2,
-                icon: AppIcons.userSolid,
-                outlineIcon: AppIcons.userOutlined,
-                label: 'Profile',
-                onTap: () => navigationShell.goBranch(2),
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 
