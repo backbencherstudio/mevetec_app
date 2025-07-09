@@ -15,4 +15,5 @@ class RouteName {
   static const String savedPlaceScreen = "/SavedPlaceScreen";
   static const String searchStation = "/SavedPlaceScreen";
   static const String chargingPhase = '/charging-phase';
+  static const String allStationList = '/all-station-list';
 }

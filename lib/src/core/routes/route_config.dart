@@ -195,6 +195,19 @@ class RouteConfig {
           );
         },
       ),
+
+      GoRoute(
+        path: RouteName.allStationList,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: AllStationList(),
+          );
+        },
+      ),
+
     ],
   );
 }
