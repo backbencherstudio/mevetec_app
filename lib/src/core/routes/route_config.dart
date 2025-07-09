@@ -2,7 +2,7 @@ part of 'route_import_part.dart';
 
 class RouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: RouteName.splashScreen,
+    initialLocation: RouteName.homeScreen,
 
     /// Start at the splash screen
     routes: [
@@ -21,8 +21,8 @@ class RouteConfig {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: RouteName.locationScreen,
-                builder: (context, state) => const Location(),
+                path: RouteName.searchStation,
+                builder: (context, state) => const SearchStation(),
               ),
             ],
           ),
@@ -181,6 +181,17 @@ class RouteConfig {
             state: state,
             transitionType: PageTransitionType.slideRightToLeft,
             child: QrScannerScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        path: RouteName.chargingPhase,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: ChargingPhaseScreen(),
           );
         },
       ),

@@ -2,11 +2,12 @@ class AppIcons {
   static const String google = "assets/icons/google.svg";
   static const String apple = "assets/icons/apple.svg";
   static const String profilePath = "assets/profile_icons";
+  static const String homeIconsPath = "assets/icons/home";
   static const String backButton = "$profilePath/backbutton.svg";
   static const String profileIcon = "$profilePath/profile.svg";
   static const String statsIcon = "$profilePath/pulse.svg";
   static const String paymentIcon = "$profilePath/creditCard.svg";
-  static const String locationIcon = "$profilePath/location.svg";
+  static const String locationIcon = "$profilePath/search_station.svg";
   static const String privacyIcon = "$profilePath/lock.svg";
   static const String logoutIcon = "$profilePath/logout.svg";
   static const String forwardIcon = "$profilePath/forwardArrow.svg";
@@ -27,4 +28,8 @@ class AppIcons {
   static const String locationSolid = "$bottomNavIcon/location_solid.svg";
   static const String userOutlined = "$bottomNavIcon/user_outlined.svg";
   static const String userSolid = "$bottomNavIcon/user_solid.svg";
+
+  static const String readyCharging = "$homeIconsPath/ready.svg";
+  static String completeCharging = "$homeIconsPath/complete.svg";
+  static String chargingIcon = "$homeIconsPath/charging.svg";
 }

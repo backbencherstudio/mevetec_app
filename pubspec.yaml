@@ -48,6 +48,8 @@ dependencies:
   torch_light: ^1.1.0
   intl_phone_number_input: ^0.7.4
   dotted_line: ^3.2.3
+  flutter_hooks: ^0.21.2
+  hooks_riverpod: ^2.6.1
 
 dev_dependencies:
   flutter_test:
