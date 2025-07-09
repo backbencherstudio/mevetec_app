@@ -2,8 +2,40 @@ part of 'route_import_part.dart';
 
 class RouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: RouteName.profileScreen, /// Start at the splash screen
+    initialLocation: RouteName.homeScreen,
+
+    /// Start at the splash screen
     routes: [
+      StatefulShellRoute.indexedStack(
+        builder: (context, state, navigationShell) =>
+            BottomNavBar(navigationShell: navigationShell),
+        branches: [
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: RouteName.homeScreen,
+                builder: (context, state) => const HomeScreen(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: RouteName.searchStation,
+                builder: (context, state) => const SearchStation(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: RouteName.profileScreen,
+                builder: (context, state) => const ProfileScreen(),
+              ),
+            ],
+          ),
+        ],
+      ),
       GoRoute(
         path: RouteName.splashScreen,
         pageBuilder: (context, state) {
@@ -26,8 +58,8 @@ class RouteConfig {
           );
         },
       ),
- GoRoute(
-        path: RouteName.paymentMthdScreen,
+      GoRoute(
+        path: RouteName.paymentMethodScreen,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
             context: context,
@@ -37,7 +69,7 @@ class RouteConfig {
           );
         },
       ),
-        GoRoute(
+      GoRoute(
         path: RouteName.chargingActivityScreen,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
@@ -48,7 +80,7 @@ class RouteConfig {
           );
         },
       ),
-        GoRoute(
+      GoRoute(
         path: RouteName.successScreen,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
@@ -59,7 +91,7 @@ class RouteConfig {
           );
         },
       ),
-  GoRoute(
+      GoRoute(
         path: RouteName.completeProfileScreen,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
@@ -71,7 +103,7 @@ class RouteConfig {
         },
       ),
 
-       GoRoute(
+      GoRoute(
         path: RouteName.profileScreen,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
@@ -83,7 +115,7 @@ class RouteConfig {
         },
       ),
 
-         GoRoute(
+      GoRoute(
         path: RouteName.profileInfoScreen,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
@@ -95,23 +127,20 @@ class RouteConfig {
         },
       ),
 
-
-
-        GoRoute(
-        path: RouteName.loginScreen,
+      GoRoute(
+        path: RouteName.signUpScreen,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
             context: context,
             state: state,
             transitionType: PageTransitionType.slideRightToLeft,
-            child: LoginScreen(),
+            child: SignUpScreen(),
           );
         },
       ),
 
-
-        GoRoute(
-        path: RouteName.addNewPaymentMthdScreen,
+      GoRoute(
+        path: RouteName.addNewPaymentMethodScreen,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
             context: context,
@@ -121,19 +150,19 @@ class RouteConfig {
           );
         },
       ),
-  GoRoute(
-        path: RouteName.savedPlaceScreen,
-        pageBuilder: (context, state) {
-          return buildPageWithTransition(
-            context: context,
-            state: state,
-            transitionType: PageTransitionType.slideRightToLeft,
-            child: SavedPlaceScreen(),
-          );
-        },
-      ),
+      // GoRoute(
+      //   path: RouteName.savedPlaceScreen,
+      //   pageBuilder: (context, state) {
+      //     return buildPageWithTransition(
+      //       context: context,
+      //       state: state,
+      //       transitionType: PageTransitionType.slideRightToLeft,
+      //       child: SavedPlaceScreen(),
+      //     );
+      //   },
+      // ),
 
-        GoRoute(
+      GoRoute(
         path: RouteName.otpScreen,
         pageBuilder: (context, state) {
           return buildPageWithTransition(
@@ -141,6 +170,28 @@ class RouteConfig {
             state: state,
             transitionType: PageTransitionType.slideRightToLeft,
             child: OtpScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        path: RouteName.qrScanner,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: QrScannerScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        path: RouteName.chargingPhase,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: ChargingPhaseScreen(),
           );
         },
       ),

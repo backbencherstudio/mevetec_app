@@ -19,7 +19,7 @@ class CustomBillContainer extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
-          color: AppColorScheme.cardbgColor,
+          color: AppColorScheme.cardBgColor,
         ),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),

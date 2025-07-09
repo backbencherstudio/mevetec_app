@@ -13,8 +13,8 @@ class ListNotifier extends StateNotifier<List<ProfileListModel>>{
   ListNotifier():super([
     ProfileListModel(name: "Personal Info", imgIcon: AppIcons.profileIcon, routName: RouteName.profileInfoScreen),
     ProfileListModel(name: "Charging Activity", imgIcon: AppIcons.statsIcon, routName: RouteName.chargingActivityScreen),
-    ProfileListModel(name: "Payment Methods", imgIcon: AppIcons.paymentIcon, routName: RouteName.paymentMthdScreen),
-    ProfileListModel(name: "Saved Places", imgIcon: AppIcons.locationIcon, routName: RouteName.savedPlaceScreen),
+    ProfileListModel(name: "Payment Methods", imgIcon: AppIcons.paymentIcon, routName: RouteName.paymentMethodScreen),
+    ProfileListModel(name: "Saved Places", imgIcon: AppIcons.locationPin, routName: RouteName.savedPlaceScreen),
     ProfileListModel(name: "Privacy Policy", imgIcon: AppIcons.privacyIcon, routName: ""),
   ]);
 }

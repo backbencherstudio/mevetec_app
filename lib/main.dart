@@ -10,6 +10,11 @@ Future<void> main() async {
   /// Ensure Flutter bindings are initialized before anything else
   WidgetsFlutterBinding.ensureInitialized();
 
+  await ScreenUtil.ensureScreenSize();// Add this line.
+
+
+  /// Run the app
+  runApp(const ProviderScope(child: MyApp()));
   /// Set the system UI overlay style
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
@@ -19,9 +24,6 @@ Future<void> main() async {
       statusBarIconBrightness: Brightness.dark,
     ),
   );
-
-  /// Run the app
-  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

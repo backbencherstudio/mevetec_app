@@ -35,7 +35,7 @@ class OnboardingScreen extends StatelessWidget{
                   SizedBox(height: 20.h,),
                   SizedBox(width: double.infinity,
                   child: ElevatedButton(onPressed: (){
-                    context.push(RouteName.loginScreen);
+                    context.push(RouteName.signUpScreen);
                   }, child: Text("Continue with Phone Number")),
                   ),
                   SizedBox(height: 32.h,),
@@ -63,7 +63,10 @@ class OnboardingScreen extends StatelessWidget{
                       TextSpan(
                         text: "Sign In",
                         style: textTheme.bodyLarge?.copyWith(color: AppColorScheme.primary),
-                        recognizer: TapGestureRecognizer()..onTap = (){debugPrint("\nNavigating to sign in screen.\n");}
+                        recognizer: TapGestureRecognizer()..onTap = (){
+                          context.push(RouteName.signUpScreen);
+                          debugPrint("\nNavigating to sign in screen.\n");
+                        }
                       )
                     ]
                   ))

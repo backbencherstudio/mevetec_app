@@ -5,6 +5,9 @@ PODS:
   - libphonenumber_plugin (0.0.1):
     - Flutter
     - PhoneNumberKit
+  - mobile_scanner (7.0.0):
+    - Flutter
+    - FlutterMacOS
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -14,12 +17,16 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (4.1.1)
   - PhoneNumberKit/UIKit (4.1.1):
     - PhoneNumberKit/PhoneNumberKitCore
+  - torch_light (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - libphonenumber_plugin (from `.symlinks/plugins/libphonenumber_plugin/ios`)
+  - mobile_scanner (from `.symlinks/plugins/mobile_scanner/darwin`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+  - torch_light (from `.symlinks/plugins/torch_light/ios`)
 
 SPEC REPOS:
   trunk:
@@ -32,15 +39,21 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/fluttertoast/ios"
   libphonenumber_plugin:
     :path: ".symlinks/plugins/libphonenumber_plugin/ios"
+  mobile_scanner:
+    :path: ".symlinks/plugins/mobile_scanner/darwin"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
+  torch_light:
+    :path: ".symlinks/plugins/torch_light/ios"
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
   libphonenumber_plugin: d134f173b22bfa5ede50887071f087f309277f8c
+  mobile_scanner: 9157936403f5a0644ca3779a38ff8404c5434a93
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
   PhoneNumberKit: 09da86ca598ebc8289e5a194898c28e7a7adf702
+  torch_light: d093d579a221a59ef8a6b8c0eca20d52f7178087
 
 PODFILE CHECKSUM: 4305caec6b40dde0ae97be1573c53de1882a07e5
 
