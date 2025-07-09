@@ -13,7 +13,7 @@ class RouteName {
   static const String paymentMethodScreen = "/PaymentMethodScreen";
   static const String addNewPaymentMethodScreen = "/AddNewPaymentMethodScreen";
   static const String savedPlaceScreen = "/SavedPlaceScreen";
-  static const String searchStation = "/SavedPlaceScreen";
+  static const String searchStation = "/SearchStation";
   static const String chargingPhase = '/charging-phase';
   static const String allStationList = '/all-station-list';
 }

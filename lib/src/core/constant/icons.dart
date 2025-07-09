@@ -20,7 +20,7 @@ class AppIcons {
   static const String penIcon = "$profilePath/editPen.svg";
   static const String homeIcon = "$profilePath/homeIcon.svg";
   static const String officeIcon = "$profilePath/officeBuilding.svg";
-
+  static const String locationPin = "$profilePath/location.svg";
   static const String bottomNavIcon = "assets/icons/bottom_nav_bar";
   static const String homeOutlined = "$bottomNavIcon/home_outlined.svg";
   static const String homeSolid = "$bottomNavIcon/home_solid.svg";
@@ -28,7 +28,8 @@ class AppIcons {
   static const String locationSolid = "$bottomNavIcon/location_solid.svg";
   static const String userOutlined = "$bottomNavIcon/user_outlined.svg";
   static const String userSolid = "$bottomNavIcon/user_solid.svg";
-
+ static const String locationRed = "assets/icons/search_station/location_red.svg";
+ static const String locationGreen = "assets/profile_icons/Point.svg";
   static const String readyCharging = "$homeIconsPath/ready.svg";
   static String completeCharging = "$homeIconsPath/complete.svg";
   static String chargingIcon = "$homeIconsPath/charging.svg";
