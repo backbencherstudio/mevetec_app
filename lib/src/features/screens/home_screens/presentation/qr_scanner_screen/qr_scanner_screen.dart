@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mevetec_app/src/core/routes/route_name.dart';
 import 'package:mevetec_app/src/core/theme/theme_extension/color_scheme.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -96,16 +97,25 @@ class QrScannerScreenState extends ConsumerState<QrScannerScreen> {
             Positioned(
               top: topOffset,
               left: leftOffset,
-              child: Container(
-                width: boxWidth,
-                height: boxHeight,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: AppColorScheme.borderColor,
-                    width: 3,
+              child: Column(
+                children: [
+                  Container(
+                    width: boxWidth,
+                    height: boxHeight,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: AppColorScheme.borderColor,
+                        width: 3,
+                      ),
+                      borderRadius: BorderRadius.circular(48),
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(48),
-                ),
+                  
+                  SizedBox(height: 30,),
+                  ElevatedButton(onPressed: (){
+                    context.pushReplacement(RouteName.chargingPhase);
+                  }, child: Text('Next'))
+                ],
               ),
             ),
             Positioned(

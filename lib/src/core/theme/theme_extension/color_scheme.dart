@@ -16,7 +16,7 @@ class AppColorScheme {
   static const Color borderColor = Color(0xffE9E9EA);
   static const Color shadowColor = Color.fromRGBO(0, 0, 0, 0.10);
   static const Color dividerColor = Color(0xff35383F);
-  static const Color cardbgColor =Color(0xff1A1A1A);
+  static const Color cardBgColor =Color(0xff1A1A1A);
   static const Color tileTextColor = Color(0xffA5A5AB);
   static ColorScheme colorScheme = ColorScheme.light(
     primary: primary,
