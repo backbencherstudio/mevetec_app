@@ -150,17 +150,17 @@ class RouteConfig {
           );
         },
       ),
-      // GoRoute(
-      //   path: RouteName.savedPlaceScreen,
-      //   pageBuilder: (context, state) {
-      //     return buildPageWithTransition(
-      //       context: context,
-      //       state: state,
-      //       transitionType: PageTransitionType.slideRightToLeft,
-      //       child: SavedPlaceScreen(),
-      //     );
-      //   },
-      // ),
+      GoRoute(
+        path: RouteName.savedPlaceScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: SavedPlaceScreen(),
+          );
+        },
+      ),
 
       GoRoute(
         path: RouteName.otpScreen,
