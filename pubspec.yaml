@@ -82,6 +82,7 @@ flutter:
     - assets/images/home_flow/
     - assets/icons/home/
     - assets/icons/bottom_nav_bar/
+    - assets/icons/search_station/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
